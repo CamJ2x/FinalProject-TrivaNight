@@ -8,7 +8,7 @@ import { lastValueFrom } from 'rxjs';
 })
 export class TriviaApi {
 
-  private theServerURL : string = "http://www.omdbapi.com/?i=tt3896198&apikey=8a8ceae"
+  private theServerURL : string = "http://www.omdbapi.com/?i=tt3896198&apikey=8a8ceae&"
 
   theMovies : any[] =[]
 

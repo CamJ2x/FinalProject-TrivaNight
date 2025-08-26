@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { TriviaInfoLayout } from './interfaces/trivia-info-layout';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TriviaApi } from './services/trivia-api';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -23,11 +24,10 @@ import { TriviaApi } from './services/trivia-api';
 
   newTrivia : TriviaInfoLayout = {
                                       id: 0,
-                                      title : "",
-                                      year : "",
-                                      genre: "",
-                                      actors : "",
-                                      plot : ""
+                                      title : " ",
+                                      genre: " ",
+                                      actors : " ",
+                                      plot : " "
                                    }
 
   async ngOnInit() 
