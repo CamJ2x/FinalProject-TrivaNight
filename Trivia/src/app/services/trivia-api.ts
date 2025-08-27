@@ -14,17 +14,14 @@ export class TriviaApi {
 
   constructor(private theServer:HttpClient) {}
 
-  async getMovie() : Promise <any[]> { 
-
-    const result : any[] = await lastValueFrom(this.theServer.get<any[]>(this.theServerURL))
+  async getMovie() : Promise <any> { 
+    const result = await lastValueFrom(this.theServer.get<any>(this.theServerURL));
     return result;
-
   }
   async addMovie(newMovie : any) : Promise<any> {
-
-    const header = new HttpHeaders ({
-            'Content-Type' : 'application/json'
-    });
+      const header = new HttpHeaders ({
+              'Content-Type' : 'application/json'
+      });
 
     return lastValueFrom(this.theServer.post(this.theServerURL, newMovie ));
 
