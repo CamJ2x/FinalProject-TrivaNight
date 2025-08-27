@@ -3,7 +3,6 @@ import { TriviaInfoLayout } from './interfaces/trivia-info-layout';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TriviaApi } from './services/trivia-api';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -32,16 +31,13 @@ import { HttpClient } from '@angular/common/http';
 
   async ngOnInit() 
   {
-  this.theMovies = await this.triviaApi.getMovie();
+  const movie = await this.triviaApi.getMovie();
+    this.theMovies = [movie];
   }
   
   async addMovie(newMovie : TriviaInfoLayout) {
-   
-    await this.triviaApi.addMovie(this.newTrivia)
-  
-    this.theMovies = await this.triviaApi.getMovie()
+    await this.triviaApi.addMovie(this.newTrivia);
+    const movie = await this.triviaApi.getMovie();
+    this.theMovies = [movie];
   }
-  
- 
-
 }
