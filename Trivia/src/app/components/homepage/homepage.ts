@@ -32,5 +32,3 @@ export class Homepage {
     return this.trivia[index];
   }
 }
-
-
