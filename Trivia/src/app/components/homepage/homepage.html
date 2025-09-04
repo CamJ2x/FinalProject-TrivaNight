@@ -1,1 +1,26 @@
-<p>homepage works!</p>
+<div class="homepage">
+    <h1>{{ title }}</h1>
+  
+    <div class="buttons">
+        <button (click)="goToSolo()">Solo</button>
+        <button (click)="goToVersus()">Versus</button>
+      </div>
+      
+      <h2>Leaderboard</h2>
+      
+      <table class="leaderboard">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of leaderboard; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ entry.name }}</td>
+            <td>{{ entry.score }}</td>
+          </tr>
+        </tbody>
+      </table>
