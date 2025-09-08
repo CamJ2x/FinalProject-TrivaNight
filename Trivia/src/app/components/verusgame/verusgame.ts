@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './verusgame.css'
 })
 export class Verusgame {
+  
 
 }
