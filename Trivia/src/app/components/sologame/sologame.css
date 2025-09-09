@@ -1,4 +1,4 @@
-body {
+/* body {
   background: #fff;
   font-family: Arial, sans-serif;
   display: flex;
@@ -30,13 +30,6 @@ body {
   font-weight: bold;
 }
 
-.question {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
 .image-box {
   background: white;
   border: 6px solid black;
@@ -64,6 +57,27 @@ body {
   bottom: 20px;
   right: 20px;
  
+} */
+
+.question-box {
+  width: 50%;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin: 0 auto;
+  background: lightgray;
 }
 
+.question {
+  font-size: 24px;
+  font-weight: bold;
+}
 
+.answer-box {
+  text-align: center;
+  margin-top: 20px;
+}
