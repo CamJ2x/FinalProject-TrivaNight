@@ -22,12 +22,25 @@
 <div class="question-box">
   <div class="question">
     <p>Movie Question</p>
+    <p>{{ movie.Actors }}</p>
+    <p>{{ movie.Director }}</p>
+    <p>{{ movie.Year }}</p>
+    <p>{{ movie.Genre }}</p>
+    <p>{{ movie.Language }}</p>
+    <p>{{ movie.Plot }}</p>
   </div>
 </div>
 
 <div class="answer-box">
 
   <!-- FOR MULTIPLE CHOICE QUESTIONS -->
+    <div>
+        <button (click)="ngOnInit()">Test API Call</button>
+    </div>
+
+    <div>
+        <img src="{{ movie.Poster }}">
+    </div> 
 
   <h2>For Multiple Choice Questions</h2>
   <p>Can be moved later, I just wanted to see how it looked</p>
@@ -52,3 +65,4 @@
   <p>Or have the user press enter to submit their answer</p>
 
 </div>
+<!-- Add styling to make it look nice! wahoo -->
