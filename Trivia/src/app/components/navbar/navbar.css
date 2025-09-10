@@ -1,0 +1,15 @@
+.navbar {
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #bcbcbc;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #444444;
+    margin: 0 15px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
