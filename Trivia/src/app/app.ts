@@ -12,33 +12,33 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 
-  export class App implements OnInit {
+  export class App {
 
-  protected title = 'Trivia Night ';
+  // protected title = 'Trivia Night ';
 
-  constructor(private triviaApi: TriviaApi) {}
-
-
-  theMovies : any[] = [];
+  // constructor(private triviaApi: TriviaApi) {}
 
 
-  newTrivia : TriviaInfoLayout = {
-                                      id: 0,
-                                      title : " ",
-                                      genre: " ",
-                                      actors : " ",
-                                      plot : " "
-                                   }
+  // theMovies : any[] = [];
 
-  async ngOnInit() 
-  {
-  const movie = await this.triviaApi.getMovie();
-    this.theMovies = [movie];
-  }
+
+  // newTrivia : TriviaInfoLayout = {
+  //                                     id: 0,
+  //                                     title : " ",
+  //                                     genre: " ",
+  //                                     actors : " ",
+  //                                     plot : " "
+  //                                  }
+
+  // async ngOnInit() 
+  // {
+  // const movie = await this.triviaApi.searchMovie(" ");
+  //   this.theMovies = [movie];
+  // }
   
-  async addMovie(newMovie : TriviaInfoLayout) {
-    await this.triviaApi.addMovie(this.newTrivia);
-    const movie = await this.triviaApi.getMovie();
-    this.theMovies = [movie];
-  }
+  // async addMovie(newMovie : TriviaInfoLayout) {
+  //   await this.triviaApi.addMovie(this.newTrivia);
+  //   const movie = await this.triviaApi.searchMovie(" ");
+  //   this.theMovies = [movie];
+  // }
 }
