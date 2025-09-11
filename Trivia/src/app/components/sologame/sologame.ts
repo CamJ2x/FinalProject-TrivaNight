@@ -15,15 +15,19 @@ export class Sologame {
 
   movie: any;
 
-  ngOnInit(): void {
-    // FOR NOW YOU MANUALLY TYPE IN THE TITLE OF THE MOVIE YOU WANT TO HAVE POPULATE THE INFORMATION FIELD INSIDE THE SOLOGAME.html
-    this.triviaApi.searchMovie("Avengers")
+  testApi(): void {
+     // FOR NOW YOU MANUALLY TYPE IN THE TITLE OF THE MOVIE YOU WANT TO HAVE POPULATE THE INFORMATION FIELD INSIDE THE SOLOGAME.html
+    this.triviaApi.searchMovie("A Man Called Otto")
       .then((data: any) => {
         this.movie = data;
       })
       .catch((err: any) => {
         console.error('Error fetching movie:', err);
       });
+  }
+
+  ngOnInit(): void {
+    // Something :)
   }
 
 }
