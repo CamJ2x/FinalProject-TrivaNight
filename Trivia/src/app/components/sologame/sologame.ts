@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TriviaApi } from '../../services/trivia-api';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-sologame',
