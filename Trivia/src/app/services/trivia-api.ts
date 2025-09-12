@@ -18,11 +18,18 @@ export class TriviaApi {
 
   constructor(private http: HttpClient) {}
 
-  async searchMovie(title: string) : Promise <any[]> { 
+  async searchMovie(title: string) : Promise<any[]> { 
     const result = await lastValueFrom(this.http.get<any[]>(this.apiUrl + this.apiKey + 't={title}'.replace('{title}', title)));
     console.log(result);
     return result;
   }
+
+  async getMovieById(id: string) : Promise<any> {
+    const result = await lastValueFrom(this.http.get<any>(this.apiUrl + this.apiKey + 'i={id}'.replace('{id}', id)));
+    console.log(result);
+    return result;
+  }
+
 
   // async addMovie(newMovie : any) : Promise<any> {
   //     const header = new HttpHeaders ({

@@ -62,7 +62,7 @@ export class GameSelection {
     console.log("Difficulty: " + this.difficulty + ", Time Limit: " + this.timeLimit + " seconds");
     console.log("Question Type: " + this.questionType);
 
-    // Navigate to the Gameplay Component
+    // Navigate to the Solo Game Component
     this.router.navigate(['/soloGame']);
   }
 
