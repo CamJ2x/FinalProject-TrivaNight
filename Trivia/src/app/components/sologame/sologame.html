@@ -19,7 +19,7 @@
 
 <!-- QUESTION AREA -->
 
-<div class="question-box">
+<!-- <div class="question-box">
   <div class="question">
     <p>Movie Question</p>
     <p>{{ movie.Actors }}</p>
@@ -31,10 +31,10 @@
   </div>
 </div>
 
-<div class="answer-box">
+<div class="answer-box"> -->
 
   <!-- FOR MULTIPLE CHOICE QUESTIONS -->
-    <div>
+    <!-- <div>
         <button (click)="testApi()">Test API Call</button>
     </div>
 
@@ -51,12 +51,12 @@
   &nbsp;
   <button class="answer-btn">Answer 3</button>
   &nbsp;
-  <button class="answer-btn">Answer 4</button>
+  <button class="answer-btn">Answer 4</button> -->
   
 
   <!--  FOR FILL IN THE BLANK QUESTIONS -->
 
-  <h2>For Fill in the Blank Questions</h2>
+  <!-- <h2>For Fill in the Blank Questions</h2>
   <label for="fillIn">Your Answer:</label>
   &nbsp;
   <input type="text" id="fillIn" placeholder="Type your answer here!">
@@ -65,4 +65,10 @@
   <p>Or have the user press enter to submit their answer</p>
 
 </div>
-<!-- Add styling to make it look nice! wahoo -->
+Add styling to make it look nice! wahoo -->
+<button (click)="testApi()">Get Random Movie Plot</button>
+<p *ngIf="getRandomTitle">Guess the movie: {{ randomTitle }}</p>
+<div *ngIf="movie">
+  <h2>{{ movie.title }}</h2>
+  <p>{{ movie.plot }}</p>
+</div>
