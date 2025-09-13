@@ -60,7 +60,9 @@ export class GameDataService {
   // -------- Round and Score Management -------- //
 
   nextRound() {
-    this.currentRound++;
+    if (this.currentRound < this.selectedMovies.length - 1) {
+          this.currentRound++;
+    }
   }
 
   addPoint() {

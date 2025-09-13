@@ -6,7 +6,7 @@
   <div *ngIf="movie" class="question-box">
 
     <h1>Guess the Movie!</h1>
-    
+
     <p>Plot: {{ movie?.Plot }}</p>
     <p>Actors: {{ movie?.Actors }}</p>
     <p>Director: {{ movie?.Director }}</p>
@@ -25,9 +25,12 @@
     &nbsp; &nbsp;
     <button class="button-1" (click)="addPoint()">+1 Point</button>
     &nbsp; &nbsp;
-    <button class="button-1" (click)="next()">Next Round</button>
-    &nbsp; &nbsp;
-    <button class="button-1" (click)="endGame()">End Game</button>
+    <span *ngIf="gameData.getRound() < gameData.getTotalRounds() - 1">
+      <button class="button-1" (click)="next()">Next Round</button>
+    </span>
+    <span *ngIf="gameData.getRound() === gameData.getTotalRounds() - 1">
+      <button class="button-1" (click)="endGame()">End Game</button>
+    </span>
   </div>
 
   <div *ngIf="reveal">

@@ -10,6 +10,17 @@
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.change-log {
+  margin-top: 20px;
+}
+
+.home-description {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-size: 1rem;
+  color: #555;
+}
+
 /* Button style from https://getcssscan.com/css-buttons-examples */
 
 .button-1 {
@@ -43,3 +54,5 @@
 .button-1:focus {
   background-color: #F082AC;
 }
+
+/* --------------------------------- */
