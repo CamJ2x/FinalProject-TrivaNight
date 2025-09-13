@@ -14,32 +14,5 @@ import { Navbar } from "./components/navbar/navbar";
 })
 
   export class App {
-
-  // protected title = 'Trivia Night ';
-
-  // constructor(private triviaApi: TriviaApi) {}
-
-
-  // theMovies : any[] = [];
-
-
-  // newTrivia : TriviaInfoLayout = {
-  //                                     id: 0,
-  //                                     title : " ",
-  //                                     genre: " ",
-  //                                     actors : " ",
-  //                                     plot : " "
-  //                                  }
-
-  // async ngOnInit() 
-  // {
-  // const movie = await this.triviaApi.searchMovie(" ");
-  //   this.theMovies = [movie];
-  // }
   
-  // async addMovie(newMovie : TriviaInfoLayout) {
-  //   await this.triviaApi.addMovie(this.newTrivia);
-  //   const movie = await this.triviaApi.searchMovie(" ");
-  //   this.theMovies = [movie];
-  // }
 }

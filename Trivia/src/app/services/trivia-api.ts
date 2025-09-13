@@ -7,14 +7,11 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class TriviaApi {
-
-  private theServerURL : string = "http://www.omdbapi.com/?i=tt3896198&apikey=8a8ceae&"
-
+  // Base URL and API key from environment
   private apiUrl : string = environment.omdbApiUrl;
   private apiKey : string = environment.omdbApiKey;
-
-  theMovies : any[] =[]
 
   constructor(private http: HttpClient) {}
 
@@ -29,15 +26,5 @@ export class TriviaApi {
     console.log(result);
     return result;
   }
-
-
-  // async addMovie(newMovie : any) : Promise<any> {
-  //     const header = new HttpHeaders ({
-  //             'Content-Type' : 'application/json'
-  //     });
-
-  //   return lastValueFrom(this.http.post(this.theServerURL, newMovie ));
-
-  // }
   
 }
