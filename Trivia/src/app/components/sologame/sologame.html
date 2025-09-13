@@ -6,8 +6,7 @@
   <div *ngIf="movie" class="question-box">
 
     <h1>Guess the Movie!</h1>
-    <h2>Here are some details about the movie:</h2>
-
+    
     <p>Plot: {{ movie?.Plot }}</p>
     <p>Actors: {{ movie?.Actors }}</p>
     <p>Director: {{ movie?.Director }}</p>
@@ -17,31 +16,23 @@
 
   <!-- Reveal movie details -->
   <div class="answer-box"> 
-    <button (click)="revealAnswer()">
+
+    <p><strong>Round: </strong>{{ gameData.getRound() + 1 }} / {{ gameData.getTotalRounds() }}<strong> Score: </strong>{{ gameData.getScore() }} point(s)</p>
+
+    <button (click)="revealAnswer()" class="button-1">
         {{ reveal ? 'Hide' : 'Reveal' }} Movie
     </button>
+    &nbsp; &nbsp;
+    <button class="button-1" (click)="addPoint()">+1 Point</button>
+    &nbsp; &nbsp;
+    <button class="button-1" (click)="next()">Next Round</button>
+    &nbsp; &nbsp;
+    <button class="button-1" (click)="endGame()">End Game</button>
   </div>
 
   <div *ngIf="reveal">
     <h2>{{ movie?.Title }}</h2>
     <img [src] = "movie?.Poster" alt="Poster of {{ movie?.Title }}" />
-  </div>
-
-  <!-- Game buttons -->
-  <div class="answer-box">
-    <button (click)="addPoint()">+1 Point</button>
-    <button (click)="next()">Next Round</button>
-  </div>
-
-  <!-- Scoreboard -->
-  <div class="answer-box">
-    <p>Round: {{ gameData.getRound() + 1 }} / {{ gameData.getTotalRounds() }}</p>
-    <p>Score: {{ gameData.getScore() }}</p>
-  </div>
-
-  <!-- End Game Button -->
-  <div class="answer-box">
-    <button (click)="endGame()">End Game</button>
   </div>
 
 </div>
