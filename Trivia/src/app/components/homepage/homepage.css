@@ -6,14 +6,14 @@
   text-align: center;
 }
 
-:host {
+/* :host {
   margin: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #6a11cb, #2575fc);
-}
+} */
 
 /* Button style from https://getcssscan.com/css-buttons-examples */
 
