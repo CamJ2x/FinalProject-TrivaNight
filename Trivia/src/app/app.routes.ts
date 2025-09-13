@@ -12,5 +12,4 @@ export const routes: Routes = [
     {path: 'versusGame',    component: Verusgame},
     {path: 'gameSelection', component: GameSelection},
     {path: 'endGame',  component: EndGameComponent},
-
 ];
