@@ -3,12 +3,15 @@ import { Sologame } from './components/sologame/sologame';
 import { Homepage } from './components/homepage/homepage';
 import { GameSelection } from './components/game-selection/game-selection';
 import { EndGameComponent } from './components/end-game-component/end-game-component';
+import { ChangeLog } from './components/change-log/change-log';
+import { MovieList } from './components/movie-list/movie-list';
 
 export const routes: Routes = [
     {path: '',   redirectTo: 'home', pathMatch: 'full'},
     {path: 'home',          component: Homepage},
     {path: 'soloGame',      component: Sologame}, 
     {path: 'gameSelection', component: GameSelection},
-    {path: 'endGame',  component: EndGameComponent},
-
+    {path: 'endGame',       component: EndGameComponent},
+    {path: 'changeLog',     component: ChangeLog},
+    {path: 'movieList',     component: MovieList}
 ];
