@@ -3,6 +3,9 @@ export const environment = {
     omdbApiUrl: 'http://www.omdbapi.com/',
     omdbApiKey: '?apikey=8a8ceae&'
 
+    // SearchMovie()
     // The Url works as is: http://www.omdbapi.com/?{omdbApiKey}&t=Whatever+You+Want+To+Search
-
+    
+    // GetMovieById()
+    // The Url works as is: http://www.omdbapi.com/?{omdbApiKey}&i={imdbID}
 }

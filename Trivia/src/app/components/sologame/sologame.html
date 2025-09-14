@@ -1,67 +1,41 @@
-<!-- <div class="quiz-container">
-
-  <div class="circle">
-      <span>10</span>
-  </div>
-  
-  <h2 class="question2">QUESTION, NANANA FLARBAN?</h2>
-
-  <div class="graph-box">
-      <img src="placeholder.png" alt="Graph">
+<div class="game-container">
+  <div *ngIf="!movie">
+    <p>Loading movie...</p>
   </div>
 
-  <button class="next-btn">NEXT!</button>
+  <div *ngIf="movie" class="question-box">
+
+    <h1>Guess the Movie!</h1>
+
+    <p>Plot: {{ movie?.Plot }}</p>
+    <p>Actors: {{ movie?.Actors }}</p>
+    <p>Director: {{ movie?.Director }}</p>
+    <p>Year: {{ movie?.Year }}</p>
+    <p> Genre: {{ movie?.Genre }}</p>
   </div>
 
-  <div class = "input-box">
-    <input type = "Type your answer here!">
-  </div> -->
+  <!-- Reveal movie details -->
+  <div class="answer-box"> 
 
-<!-- QUESTION AREA -->
+    <p><strong>Round: </strong>{{ gameData.getRound() + 1 }} / {{ gameData.getTotalRounds() }}<strong> Score: </strong>{{ gameData.getScore() }} point(s)</p>
 
-<div class="question-box">
-  <div class="question">
-    <p>{{ movie.Actors }}</p>
-    <p>{{ movie.Director }}</p>
-    <p>{{ movie.Year }}</p>
-    <p>{{ movie.Genre }}</p>
-    <p>{{ movie.Language }}</p>
-    <p>{{ movie.Plot }}</p>
+    <button (click)="revealAnswer()" class="button-1">
+        {{ reveal ? 'Hide' : 'Reveal' }} Movie
+    </button>
+    &nbsp; &nbsp;
+    <button class="button-1" (click)="addPoint()">+1 Point</button>
+    &nbsp; &nbsp;
+    <span *ngIf="gameData.getRound() < gameData.getTotalRounds() - 1">
+      <button class="button-1" (click)="next()">Next Round</button>
+    </span>
+    <span *ngIf="gameData.getRound() === gameData.getTotalRounds() - 1">
+      <button class="button-1" (click)="endGame()">End Game</button>
+    </span>
   </div>
-</div>
 
-<div class="answer-box">
-
-  <!-- FOR MULTIPLE CHOICE QUESTIONS -->
-    <div>
-        <button (click)="testApi()">Test API Call</button>
-    </div>
-
-    <div>
-        <img src="{{ movie.Poster }}">
-    </div> 
-
-  <h2>For Multiple Choice Questions</h2>
-  <p>Can be moved later, I just wanted to see how it looked</p>
-
-  <button class="answer-btn">Answer 1</button>
-  &nbsp;
-  <button class="answer-btn">Answer 2</button>
-  &nbsp;
-  <button class="answer-btn">Answer 3</button>
-  &nbsp;
-  <button class="answer-btn">Answer 4</button>
-  
-
-  <!--  FOR FILL IN THE BLANK QUESTIONS -->
-
-  <h2>For Fill in the Blank Questions</h2>
-  <label for="fillIn">Your Answer:</label>
-  &nbsp;
-  <input type="text" id="fillIn" placeholder="Type your answer here!">
-  &nbsp;
-  <input type="submit" value="Submit Answer">
-  <p>Or have the user press enter to submit their answer</p>
+  <div *ngIf="reveal">
+    <h2>{{ movie?.Title }}</h2>
+    <img [src] = "movie?.Poster" alt="Poster of {{ movie?.Title }}" />
+  </div>
 
 </div>
-<!-- Add styling to make it look nice! wahoo -->
