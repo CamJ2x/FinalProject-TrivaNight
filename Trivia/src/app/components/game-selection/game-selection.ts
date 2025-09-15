@@ -10,7 +10,7 @@ import { GameDataService } from '../../services/game-data-service';
 })
 export class GameSelection {
 
-    // Default values for game settings
+  // Default values for game settings
   username: string = 'Player1';
   color: string = '#ff0000';
 
