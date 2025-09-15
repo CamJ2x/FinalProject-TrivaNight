@@ -45,7 +45,7 @@ export class Sologame implements OnInit {
   ngOnInit() {
     this.gameData.loadMoviePool().subscribe(ids => {
     this.gameData.setMoviePool(ids);
-    this.gameData.startNewGame(5);
+    this.gameData.startNewGame(10);
     this.loadMovie();
 });
   }
