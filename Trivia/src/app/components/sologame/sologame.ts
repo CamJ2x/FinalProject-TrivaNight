@@ -4,10 +4,11 @@ import { OnInit } from '@angular/core';
 import { TriviaApi } from '../../services/trivia-api';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-sologame',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './sologame.html',
   styleUrl: './sologame.css'
 })
@@ -18,6 +19,11 @@ export class Sologame implements OnInit {
   movie: any = null;
 
   reveal: boolean = false;
+
+  userInput : string = " ";
+  result :string = " ";
+
+
 
   testApi(): void {
        // Example of fetching by title
@@ -52,6 +58,9 @@ export class Sologame implements OnInit {
 
   async loadMovie() {
     this.movie = await this.gameData.getCurrentMovie();
+    this.userInput = " ";
+    this.result = " ";
+
   }
 
   next() {
@@ -67,14 +76,31 @@ export class Sologame implements OnInit {
     this.gameData.addPoint();
     console.log('Point added! Current score:', this.gameData.getScore());
   }
-
+/*
   revealAnswer() {
       this.reveal = !this.reveal;
   }
-
+*/
   endGame() {
     // Navigate to end game component
     this.router.navigate(['/endGame']);
   }
+  checkAnswer() {
+    if (!this.movie) return;
 
+    const correctTitle = this.movie?.Title?.toLowerCase().trim();
+    const guess = this.userInput.toLowerCase().trim();
+
+    if (guess === correctTitle) {
+      this.gameData.addPoint();
+      this.result = "Correct +1";
+      console.log('Point added! Current score:', this.gameData.getScore());
+      this.reveal = !this.reveal;
+    } else {
+      
+      this.result = `Wrong! No points. : ${this.movie?.Title}`;
+      this.reveal = !this.reveal;
+    }
+
+}
 }
