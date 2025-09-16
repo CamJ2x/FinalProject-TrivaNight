@@ -3,25 +3,21 @@ import { LeaderboardComponent } from '../leaderboard/leaderboard';
 import { TriviaApi } from '../../services/trivia-api';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-sologame',
-  standalone: true,                 
-  imports: [LeaderboardComponent],
+  imports: [CommonModule],
   templateUrl: './sologame.html',
   styleUrls: ['./sologame.css']      
 })
 export class Sologame implements OnInit {
 
-  movie: any;
+  constructor(public gameData: GameDataService, public triviaApi: TriviaApi, private router: Router) {}
 
-  leaderboard = [
-    { name: 'Alice', score: 120 },
-    { name: 'Bob', score: 95 },
-    { name: 'Charlie', score: 75 },
-  ];
+  movie: any = null;
 
-  constructor(private triviaApi: TriviaApi) {}
+  reveal: boolean = false;
 
   testApi(): void {
      // FOR NOW YOU MANUALLY TYPE IN THE TITLE OF THE MOVIE YOU WANT TO HAVE POPULATE THE INFORMATION FIELD INSIDE THE SOLOGAME.html
@@ -45,6 +41,9 @@ export class Sologame implements OnInit {
 
   async loadMovie() {
     this.movie = await this.gameData.getCurrentMovie();
+    this.userInput = " ";
+    this.result = " ";
+
   }
 
   next() {
@@ -60,13 +59,14 @@ export class Sologame implements OnInit {
     this.gameData.addPoint();
     console.log('Point added! Current score:', this.gameData.getScore());
   }
-
+/*
   revealAnswer() {
       this.reveal = !this.reveal;
   }
-
+*/
   endGame() {
     // Navigate to end game component
     this.router.navigate(['/endGame']);
   }
+
 }

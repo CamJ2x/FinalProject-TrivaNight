@@ -18,10 +18,11 @@
   <div class="answer-box"> 
 
     <p><strong>Round: </strong>{{ gameData.getRound() + 1 }} / {{ gameData.getTotalRounds() }}<strong> Score: </strong>{{ gameData.getScore() }} point(s)</p>
-
+<!--
     <button (click)="revealAnswer()" class="button-1">
         {{ reveal ? 'Hide' : 'Reveal' }} Movie
     </button>
+    -->
     &nbsp; &nbsp;
     <button class="button-1" (click)="addPoint()">+1 Point</button>
     &nbsp; &nbsp;
@@ -37,6 +38,14 @@
     <h2>{{ movie?.Title }}</h2>
     <img [src] = "movie?.Poster" alt="Poster of {{ movie?.Title }}" />
   </div>
+
+  <div class="guessInput">
+    <input [(ngModel)]="userInput" placeholder="Type your answer..." />
+    <button class = "submitButton" (click)="checkAnswer()" > Submit Guess</button>
+   
+  </div>
+
+  <p *ngIf = "result">{{result}}</p>
 
 </div>
 <<<<<<< HEAD
