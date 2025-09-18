@@ -25,6 +25,13 @@
   margin-top: 20px;
 }
 
+.poster {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Button style from https://getcssscan.com/css-buttons-examples */
 
 .button-1 {
@@ -66,8 +73,31 @@
 
 /* --------------------------------- */
 
-/* Input box style from https://getcssscan.com/css-inputs-examples */
+/* Input box style from https://uiverse.io/ErzenXz/horrible-rattlesnake-14 */
 
+.input {
+  width: 100%;
+  max-width: 220px;
+  height: 40px;
+  padding: 10p 16px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+  font-size: 16px;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: auto;
+  line-height: 20px;
+  text-align: center;
+}
 
+.input:active {
+  transform: scale(0.95);
+}
+
+.input:focus {
+  border: 2px solid #EA4C89;
+}
 
 /* --------------------------------- */
