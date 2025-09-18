@@ -17,14 +17,12 @@ export class Sologame implements OnInit {
   constructor(public gameData: GameDataService, public triviaApi: TriviaApi, private router: Router) {}
 
   movie: any = null;
-
   reveal: boolean = false;
   userInput: string = " ";
   result: string = " ";
   hasAnswered: boolean = false;
 
   testApi(): void {
-     // FOR NOW YOU MANUALLY TYPE IN THE TITLE OF THE MOVIE YOU WANT TO HAVE POPULATE THE INFORMATION FIELD INSIDE THE SOLOGAME.html
     this.triviaApi.searchMovie("A Man Called Otto")
       .then((data: any) => {
         this.movie = data;
@@ -40,7 +38,7 @@ export class Sologame implements OnInit {
     this.gameData.setMoviePool(ids);
     this.gameData.startNewGame(10);
     this.loadMovie();
-});
+    });
   }
 
   async loadMovie() {
@@ -64,11 +62,13 @@ export class Sologame implements OnInit {
     this.gameData.addPoint();
     console.log('Point added! Current score:', this.gameData.getScore());
   }
-/*
-  revealAnswer() {
-      this.reveal = !this.reveal;
-  }
-*/
+  
+  /*
+    revealAnswer() {
+        this.reveal = !this.reveal;
+    }
+  */
+
   endGame() {
     // Navigate to end game component
     this.router.navigate(['/endGame']);
