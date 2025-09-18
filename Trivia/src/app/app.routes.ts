@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LeaderboardComponent } from './components/leaderboard/leaderboard';
 
+
 const routes: Routes = [
   { path: 'leaderboard', component: LeaderboardComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' } // default route
@@ -19,6 +20,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {}
 
 
