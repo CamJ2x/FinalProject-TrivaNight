@@ -7,16 +7,11 @@ import { EndGameComponent } from './components/end-game-component/end-game-compo
 import { ChangeLog } from './components/change-log/change-log';
 import { MovieList } from './components/movie-list/movie-list';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { LeaderboardComponent } from './components/leaderboard/leaderboard';
 
-const routes: Routes = [
-  { path: 'leaderboard', component: LeaderboardComponent },
-  { path: '', redirectTo: '/', pathMatch: 'full' } // default route
-];
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
@@ -31,6 +26,5 @@ export const routes: Routes = [
     {path: 'endGame',       component: EndGameComponent},
     {path: 'changeLog',     component: ChangeLog},
     {path: 'movieList',     component: MovieList},
-    {path: 'leaderboard',   component: LeaderboardComponent}
-    
+    {path: 'leaderboard',   component: LeaderboardComponent}    
 ];
