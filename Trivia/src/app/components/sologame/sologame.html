@@ -23,12 +23,20 @@
         {{ reveal ? 'Hide' : 'Reveal' }} Movie
     </button>
     -->
-    &nbsp; &nbsp;
-    <button class="button-1" (click)="addPoint()">+1 Point</button>
-    &nbsp; &nbsp;
+
+    <!-- <button class="button-1" (click)="addPoint()">+1 Point</button>
+    &nbsp; &nbsp; -->
+
     <span *ngIf="gameData.getRound() < gameData.getTotalRounds() - 1">
-      <button class="button-1" (click)="next()">Next Round</button>
+
+      <button class="button-1" 
+        [class.disabled]="!hasAnswered"
+        [disabled]="!hasAnswered"
+        (click)="next()"> Next Round
+      </button>
+
     </span>
+
     <span *ngIf="gameData.getRound() === gameData.getTotalRounds() - 1">
       <button class="button-1" (click)="endGame()">End Game</button>
     </span>
@@ -39,18 +47,14 @@
     <img [src] = "movie?.Poster" alt="Poster of {{ movie?.Title }}" />
   </div>
 
-  <div class="guessInput">
-    <input [(ngModel)]="userInput" placeholder="Type your answer..." />
+  <div class="guessInput" class=" ">
+    <input type="text" [(ngModel)]="userInput" placeholder="Type your answer..." />
     <button class = "submitButton" (click)="checkAnswer()" > Submit Guess</button>
-   
   </div>
 
   <p *ngIf = "result">{{result}}</p>
 
 </div>
-<<<<<<< HEAD
 
-<app-leaderboard [leaderboard]="leaderboard"></app-leaderboard>
+<!-- <app-leaderboard [leaderboard]="leaderboard"></app-leaderboard> -->
 <!-- Add styling to make it look nice! wahoo -->
-=======
->>>>>>> 19fa0d6f65cf500bb34f0bbcef3ba26318ced256
